@@ -21,3 +21,26 @@
 # Specify multiple conditions with || (OR) and && (AND):
 # if dinner == "tacos" || dinner == "pizza"
 # if dinner == "tacos" && dessert == "ice cream"
+
+
+# roll two dice, add them up
+# if the total is 7 or 11
+#   say YOU WIN!
+# otherwise, if it's 2, 3, or 12
+#   say YOU LOSE!
+# otherwise
+#   say THE POINT IS (the total)
+
+die1 = rand(1..6)
+die2 = rand(1..6)
+puts "Dice: #{die1} #{die2}"
+total = die1 + die2
+
+
+if total == 7 || total == 11
+  puts "YOU WIN!"
+elsif total == 2 || total == 3 || total == 12
+  puts "YOU LOSE!"
+else 
+  puts "THE POINT IS #{total}"
+end
