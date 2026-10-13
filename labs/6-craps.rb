@@ -28,9 +28,31 @@ else
   # 1. Pseudo-code first. What happens after the point is set? Write the steps in
   #    plain English, one per line, as comments, before any code.
 
+# a.roll again and show the total
+# b. if total == point
+#   "YOU WIN"
+#   stop the game
+# c. else if total == 7
+#   "YOU LOSE"
+#   stop the game
+# else
+#   go back to a.
 
   # 2. Give your pseudo-code, the rules and this file to a chat, and ask for plain
   #    Ruby that fills in this part. Paste its code here, then run this file a few
   #    times. How do you know it's right?
 
+  loop do                                  # "go back to a." = the loop
+    roll_number += 1                       # a.
+    total = rand(1..6) + rand(1..6)
+    puts "Roll #{roll_number}: #{total}"
+
+    if total == point                      # b.
+      puts "YOU WIN!"
+      break                                # stop the game
+    elsif total == 7                       # c.
+      puts "YOU LOSE!"
+      break
+    end                                    # else: nothing, so it loops back
+  end
 end
